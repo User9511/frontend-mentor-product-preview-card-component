@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+  border: none;
+}
+
+:root {
+  --Dark-cyan: hsl(158, 36%, 37%);
+  --Very-dark-green: hsl(159, 37%, 20%);
+  --Teal-background: hsla(173, 36%, 50%, 0.711);
+  --Very-dark-blue: hsl(212, 21%, 14%);
+  --Dark-grayish-blue: hsl(228, 12%, 48%);
+  --White: hsl(0, 0%, 100%);
+}
+
+body {
+  font-family: "Fraunces", serif;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+}
+
+img {
+  width: 100%;
+}
+
+
+/* Outer Container */
+.outer-container {
+  display: grid;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--Teal-background);
+}
+
+
+/* Card Container */
+.card-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "image-original-dt card-section-text"
+    "image-original-dt card-section-text";
+  width: clamp(30rem, 50vw + 38rem, 40rem);
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.218);
+}
+
+
+/* Card Image */
+.image-original-dt {
+  position: relative;
+  display: block;
+  grid-area: image-original-dt;
+  border-radius: 10px 0 0 10px;
+}
+
+.product-image {
+  position: relative;
+}
+
+.image-grayscale-dt {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transition: linear 0.8s;
+  border-radius: 20px 0 0 20px;
+}
+
+.image-grayscale-dt:hover {
+  opacity: 0;
+  transition: 1s;
+}
+
+
+/* Original Image Mobile */
+.image-original-mobile {
+  display: none;
+}
+
+.image-grayscale-mobile {
+  display: none;
+}
+
+
+/* Card Text */
+.card-section-text {
+  grid-area: card-section-text;
+  padding: 2rem;
+  display: grid;
+}
+
+h3 {
+  color: var(--Dark-grayish-blue);
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.3rem;
+  font-size: 12px;
+}
+
+.card-title {
+  font-family: "Fraunces", serif;
+  font-size: 2rem;
+  color: var(--Very-dark-blue);
+  line-height: 1;
+  width: clamp(10rem, 15rem, 20rem);
+}
+
+.card-text {
+  color: var(--Dark-grayish-blue);
+  line-height: 1.8;
+  width: clamp(10rem, 15rem, 20rem);
+}
+
+.card-prices {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 1.5rem;
+  font-family: "Fraunces", serif;
+  margin-bottom: 1rem;
+}
+
+.card-prices p {
+  color: var(--Dark-cyan);
+  font-size: 2rem;
+}
+
+.card-prices p:nth-child(2) {
+  color: var(--Dark-grayish-blue);
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8rem;
+  text-decoration: line-through;
+}
+
+
+/* Button */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: var(--White);
+  background-color: var(--Dark-cyan);
+  padding: 0.3rem;
+  border-radius: 10px;
+  width: 100%;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.cart-icon {
+  width: 1rem;
+}
+
+.rotate {
+  transform: rotate(360deg);
+  transition: 0.5s ease-in-out;
+}
+
+
+/* Mobile View */
+@media (max-width: 500px) {
+
+  .card-container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "image-original-dt"
+      "card-section-text";
+    width: clamp(20rem, 90vw, 40rem);
+    border-radius: 20px;
+  }
+
+  .image-original-dt {
+    grid-area: image-original-dt;
+    border-radius: 20px 20px 0 0;
+    display: none;
+  }
+
+  .image-grayscale-dt {
+    display: none;
+  }
+
+  .image-original-mobile {
+    display: block;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .image-grayscale-mobile {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transition: linear 0.8s;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .image-grayscale-mobile:hover {
+    opacity: 0;
+    transition: 1s;
+  }
+
+  .card-section-text {
+    grid-area: card-section-text;
+    gap: 1rem;
+  }
+
+  .card-title {
+    width: 100%;
+  }
+
+  .card-text {
+    width: clamp(70%, 95%, 95%);
+  }
+
+  .btn {
+    padding: 1rem;
+  }
+}

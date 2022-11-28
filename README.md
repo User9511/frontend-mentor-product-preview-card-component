@@ -1,8 +1,7 @@
 ### Links
 
 - Solution URL: [https://www.frontendmentor.io/solutions/product-preview-card-component-css-grid-flexbox-javascript-V9lcetKHdw]
-- Live Site URL: [https://smgy94.github.io/front-end-mentor-projects/product-preview-card-component/]
-
+- Live Site URL: [https://smgy94.github.io/frontend-mentor-product-preview-card-component/]
 
 # Frontend Mentor - Product preview card component solution
 
@@ -18,7 +17,6 @@ This is a solution to the [Product preview card component challenge on Frontend 
 - [Continued development](#continued-development)
 - [Useful resources](#useful-resources)
 - [Author](#author)
-
 
 ### Screenshot
 
